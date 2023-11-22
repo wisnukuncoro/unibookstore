@@ -16,30 +16,24 @@ class Buku extends BaseController
     $this->ModelPengadaan = new ModelPengadaan();
   }
 
-  // public function index(): string
-  // {
-  //   $data = [
-  //     'data_buku' => $this->ModelBuku->findAll(),
-  //   ];
-
-  //   return view('index', $data);
-  // }
-
   public function index()
   {
     $pager = \Config\Services::pager();
     $kunci = $this->request->getVar('cari');
 
     if ($kunci) {
-      $queryBuku = $this->ModelBuku->search($kunci);
+      $queryBukuSearch = $this->ModelBuku->search($kunci);
+      $queryBuku = $this->ModelBuku;
       $queryPenerbit = $this->ModelPenerbit;
       $jumlah = "Pencarian dengan nama <B>$kunci</B> ditemukan " . $queryBuku->affectedRows() . " Data";
     } else {
+      $queryBukuSearch = $this->ModelBuku;
       $queryBuku = $this->ModelBuku;
       $queryPenerbit = $this->ModelPenerbit;
       $jumlah = "";
     }
 
+    $data['data_buku_search'] = $queryBukuSearch->paginate(10);
     $data['data_buku'] = $queryBuku->paginate(10);
     $data['data_penerbit'] = $queryPenerbit->paginate(10);
     $data['pager_buku'] = $this->ModelBuku->pager;
@@ -61,7 +55,7 @@ class Buku extends BaseController
       'penerbit' => $this->request->getPost('penerbit'),
     ];
     $this->ModelBuku->create($data);
-    return redirect()->to('#about');
+    return redirect()->to('#buku');
   }
 
   public function update($id_buku)
@@ -75,7 +69,7 @@ class Buku extends BaseController
       'penerbit' => $this->request->getPost('penerbit'),
     ];
     $this->ModelBuku->updateData($data);
-    return redirect()->to('#about');
+    return redirect()->to('#buku');
   }
 
   public function delete($id_buku)
@@ -84,6 +78,6 @@ class Buku extends BaseController
       'id_buku' => $id_buku,
     ];
     $this->ModelBuku->deleteData($data);
-    return redirect()->to('#about');
+    return redirect()->to('#buku');
   }
 }

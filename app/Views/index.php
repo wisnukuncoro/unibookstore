@@ -67,7 +67,7 @@
               <tbody>
                 <?php
                   $no = 1;
-                  foreach ($data_buku as $data):
+                  foreach ($data_buku_search as $data):
                 ?>
                 <tr class="align-middle">
                   <th scope="row"><?= $no ?></th>
@@ -262,7 +262,6 @@
                   <th scope="col">No</th>
                   <th scope="col">ID Penerbit</th>
                   <th scope="col">Nama Penerbit</th>
-                  <th scope="col">ID Buku</th>
                   <th scope="col">Nama Buku</th>
                   <th scope="col">Stok</th>
                 </tr>
@@ -270,53 +269,24 @@
               <tbody>
                 <?php
                   $no = 1;
-                  // $n1 = sizeof($data_buku);
-                  // $n2 = sizeof($data_penerbit);
-                  // for ($i=0; $i < $n1; $i++) {
-                  //   $data_1 = $data_buku[$i];
-                  //   if($data_1['stok'] > 20):
-                  //     continue;
-                  //   endif;
-                  //   for ($j=0; $j < $n2; $j++)
-                  //     $data_2 = $data_penerbit[$j];
+                  foreach ($data_buku as $data):
+                    if ($data['stok'] > 20):
+                      continue;
+                    endif;
                 ?>
                 <tr class="align-middle">
-                  <th scope="row">1</th>
-                  <td>SP01</td>
-                  <td>Penerbit Informatika</td>
-                  <td>B1001</td>
-                  <td>Bisnis Online</td>
-                  <td>9</td>
-                </tr>
-                <tr class="align-middle">
-                  <th scope="row">2</th>
-                  <td>SP01</td>
-                  <td>Penerbit Informatika</td>
-                  <td>B1002</td>
-                  <td>Etika Bisnis dan Tanggung Jawab Sosial</td>
-                  <td>20</td>
+                  <th scope="row"><?= $no ?></th>
+                  <td><?= $data['id_buku'] ?></td>
+                  <td><?= $data['nama_buku'] ?></td>
+                  <td><?= $data['penerbit'] ?></td>
+                  <td><?= $data['stok'] ?></td>
                 </tr>
                 <?php
-                  // }
                   $no++;
+                  endforeach;
                 ?>
               </tbody>
             </table>
-            <!-- <nav aria-label="...">
-              <ul class="pagination">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active">
-                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Next</a>
-                </li>
-              </ul>
-            </nav> -->
             <br>
             </div>
           </div>
