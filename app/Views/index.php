@@ -277,8 +277,8 @@
                 <tr class="align-middle">
                   <th scope="row"><?= $no ?></th>
                   <td><?= $data['id_buku'] ?></td>
-                  <td><?= $data['nama_buku'] ?></td>
                   <td><?= $data['penerbit'] ?></td>
+                  <td><?= $data['nama_buku'] ?></td>
                   <td><?= $data['stok'] ?></td>
                 </tr>
                 <?php
