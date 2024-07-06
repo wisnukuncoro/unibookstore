@@ -1,6 +1,6 @@
 # UniBook Store
 
-UniBook Store adalah sebuah aplikasi CRUD sederhana untuk mengelola penjualan buku dan stoknya. Aplikasi ini dibangun menggunakan framework CodeIgniter sebagai bagian dari tugas proyek E-Commerce dalam mata kuliah Tugas Proyek.
+UniBook Store adalah sebuah aplikasi CRUD sederhana untuk mengelola penjualan buku dan stoknya. Aplikasi ini dibangun menggunakan framework CodeIgniter sebagai bagian dari ujian sertifikasi Junior Web Programmer yang diselenggarakan oleh LSP Telematika dalam naungan Badan Nasional Sertifikasi Profesi (BNSP)
 
 ## Fitur Utama
 
