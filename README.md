@@ -5,8 +5,11 @@ UniBook Store adalah sebuah aplikasi CRUD sederhana untuk mengelola penjualan bu
 ## Fitur Utama
 
 CRUD Buku: Memungkinkan pengguna untuk menambah, mengedit, dan menghapus informasi buku.
+
 CRUD Penerbit: Pengelolaan data penerbit buku.
+
 Pencarian Buku: Memungkinkan pengguna mencari buku dengan nama buku.
+
 Manajemen Stok: Melihat stok sebuah buku.
 
 ## Installation
